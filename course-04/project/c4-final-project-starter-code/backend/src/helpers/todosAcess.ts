@@ -75,7 +75,7 @@ export class TodoAcess {
     }).promise()
   }
 
-  async createAttachmentPresignedUrl(userId: string, todoId: string, attachmentUrl: string) {
+  async updateAttachmentUrl(userId: string, todoId: string, attachmentUrl: string) {
     return await this.docClient.update({
       TableName: this.todosTable,
       Key: {

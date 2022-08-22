@@ -40,7 +40,7 @@ export const deleteTodo = async (userId: string, todoId: string) => {
 export const createAttachmentPresignedUrl = async (userId: string, todoId: string) => {
     const uploadUrl = getUploadUrl(todoId)
 
-    await todosAccess.createAttachmentPresignedUrl(userId, todoId, uploadUrl)
+    await todosAccess.updateAttachmentUrl(userId, todoId, uploadUrl.split('?')[0])
 
     return uploadUrl
 }
